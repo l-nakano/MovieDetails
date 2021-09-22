@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  MovieDetails
-//
-//  Created by Lucas Yoshio Nakano on 22/09/21.
-//
-
 import UIKit
 
 @main
