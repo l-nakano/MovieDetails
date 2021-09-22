@@ -1,17 +1,13 @@
-//
-//  ViewController.swift
-//  MovieDetails
-//
-//  Created by Lucas Yoshio Nakano on 22/09/21.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class MovieDetailsViewController: UIViewController {
 
+    let service = MovieService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        service.fetchMoviesDetails()
     }
 
 

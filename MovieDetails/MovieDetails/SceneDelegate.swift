@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MovieDetails
-//
-//  Created by Lucas Yoshio Nakano on 22/09/21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
