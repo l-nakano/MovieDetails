@@ -2,8 +2,7 @@ import Foundation
 import Alamofire
 
 final class MovieService {
-    func fetchMoviesDetails(completion: @escaping (Movie) -> Void) {
-        let movieID: Int = 181812
+    func fetchMovieDetails(movieID: Int, posterWidth: Int, completion: @escaping (Movie, Data) -> Void) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)?api_key=76a63be0aae78226a632aacfd082fd6e")
         else {
             print("URL inválido")
@@ -22,11 +21,14 @@ final class MovieService {
             }
             .responseDecodable(of: Movie.self) { response in
                 guard let movieDetails = response.value else { return }
-                completion(movieDetails)
+                
+                self.fetchMoviePoster(posterPath: movieDetails.poster_path, width: 500) { data in
+                    completion(movieDetails, data)
+                }
             }
     }
     
-    func fetchMoviePoster(posterPath: String, width: Int, completion: @escaping (Data) -> Void) {
+    private func fetchMoviePoster(posterPath: String, width: Int, completion: @escaping (Data) -> Void) {
         guard let url = URL(string: "https://image.tmdb.org/t/p/w\(width)\(posterPath)")
         else {
             print("URL inválido")
