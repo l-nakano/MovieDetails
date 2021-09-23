@@ -18,10 +18,11 @@ class MovieDetailsViewController: UIViewController {
     }
 
     func setupScreen() {
-        let service = MovieService()
+        let movieService = MovieService()
         
         let movieID = 181812
-        service.fetchMovieDetails(movieID: movieID, posterWidth: 500) { movieData, posterData in
+        let key = "76a63be0aae78226a632aacfd082fd6e"
+        movieService.fetchMovieDetails(movieID: movieID, key: key, posterWidth: 500) { movieData, posterData in
             self.updateMovieDetails(movie: movieData, poster: posterData)
         }
     }
