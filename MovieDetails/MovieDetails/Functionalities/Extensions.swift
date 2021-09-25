@@ -21,3 +21,13 @@ extension UIButton {
         self.setTitle("", for: .normal)
     }
 }
+
+extension UIImageView {
+    
+    func showPoster(animationTime: Double) {
+        self.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
+        UIView.animate(withDuration: animationTime, animations: {
+            self.transform = CGAffineTransform.identity
+        })
+    }
+}

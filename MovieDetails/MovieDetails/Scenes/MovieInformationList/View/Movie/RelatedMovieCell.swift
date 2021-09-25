@@ -15,6 +15,7 @@ final class RelatedMovieCell: UITableViewCell {
         let posterService = PosterService()
         posterService.fetchMoviePoster(posterPath: movie.poster_path, width: "original") { data in
             self.movieImage.image = UIImage(data: data)
+            self.movieImage.showPoster(animationTime: 0.2)
         }
     }
 }
