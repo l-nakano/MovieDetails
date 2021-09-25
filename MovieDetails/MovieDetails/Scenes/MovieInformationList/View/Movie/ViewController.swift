@@ -12,19 +12,28 @@ class MovieDetailsViewController: UIViewController {
     
     @IBOutlet weak var relatedMoviesTableView: UITableView!
     
-    @IBInspectable var movieLiked: Bool = false { didSet { self.changeLikeSymbol() } }
+    let defaults = UserDefaults.standard
+    
+    var movieLiked: Bool! { didSet { self.changeLikeSymbol() } }
     
     let movieID = 181812
     let key = "76a63be0aae78226a632aacfd082fd6e"
+    let movieLikedDefaultKey = "MovieLiked"
     
     let adapter = RelatedMovieAdapter()
     let movieService = MovieService()
     let relatedMoviesService = RelatedMoviesService()
+    let saveData = SaveData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataFromDefault()
         setupAdapter()
         setupScreen()
+    }
+    
+    func loadDataFromDefault() {
+        movieLiked = saveData.defaults.bool(forKey: movieLikedDefaultKey)
     }
     
     func setupAdapter() {
@@ -45,7 +54,6 @@ class MovieDetailsViewController: UIViewController {
         likesLabel.textWithSF(text: "\(movie.vote_count) Likes", symbol: "heart.fill")
         popularityLabel.textWithSF(text: "\(movie.popularity)", symbol: "person.crop.circle.fill.badge.checkmark")
         durationLabel.textWithSF(text: "\(movie.runtime) min", symbol: "clock.fill")
-        likeMovieButton.setButtonSF(symbol: "heart")
         let posterService = PosterService()
         posterService.fetchMoviePoster(posterPath: movie.poster_path, width: "original") { data in
             self.movieImage.image = UIImage(data: data)
@@ -63,6 +71,8 @@ class MovieDetailsViewController: UIViewController {
     
     func changeLikeSymbol() {
         movieLiked ? likeMovieButton.setButtonSF(symbol: "heart.fill") : likeMovieButton.setButtonSF(symbol: "heart")
+        saveData.movieLiked = movieLiked
+        saveData.saveInUserDefault(forKey: movieLikedDefaultKey)
     }
     
     @IBAction func likeMovie(_ sender: Any) {

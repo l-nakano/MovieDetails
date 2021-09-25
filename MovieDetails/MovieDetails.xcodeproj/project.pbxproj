@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495975D226FF8A890028A954 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495975D126FF8A890028A954 /* SaveData.swift */; };
 		4996C12E26FE77AC0039FF36 /* RelatedMoviesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C12D26FE77AC0039FF36 /* RelatedMoviesAdapter.swift */; };
 		4996C13026FE782C0039FF36 /* RelatedMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C12F26FE782C0039FF36 /* RelatedMovieCell.swift */; };
 		4996C13226FE92930039FF36 /* GenresResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996C13126FE92930039FF36 /* GenresResponse.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		40FFE0E503DDBBC16AAD3576 /* Pods_MovieDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495975D126FF8A890028A954 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		4996C12D26FE77AC0039FF36 /* RelatedMoviesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedMoviesAdapter.swift; sourceTree = "<group>"; };
 		4996C12F26FE782C0039FF36 /* RelatedMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedMovieCell.swift; sourceTree = "<group>"; };
 		4996C13126FE92930039FF36 /* GenresResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresResponse.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		495975D026FF8A4E0028A954 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				495975D126FF8A890028A954 /* SaveData.swift */,
+			);
+			path = Defaults;
+			sourceTree = "<group>";
+		};
 		49CAFFE826FCED3A00B93C7F /* Functionalities */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		AF81354E26FB5681002853D6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				495975D026FF8A4E0028A954 /* Defaults */,
 				AF81355126FB573E002853D6 /* Services */,
 				AF81355226FB5744002853D6 /* Models */,
 			);
@@ -307,6 +318,7 @@
 			files = (
 				AF81353D26FB5560002853D6 /* ViewController.swift in Sources */,
 				4996C12E26FE77AC0039FF36 /* RelatedMoviesAdapter.swift in Sources */,
+				495975D226FF8A890028A954 /* SaveData.swift in Sources */,
 				4996C13226FE92930039FF36 /* GenresResponse.swift in Sources */,
 				49CAFFF126FD1EB300B93C7F /* Genre.swift in Sources */,
 				49CAFFED26FD123F00B93C7F /* RelatedMoviesService.swift in Sources */,
