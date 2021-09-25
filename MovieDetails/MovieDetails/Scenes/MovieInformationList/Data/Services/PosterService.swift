@@ -8,16 +8,18 @@ final class PosterService {
             return
         }
         
-        AF.request(url)
-            .validate()
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    print("Validation Successful")
-                case let .failure(error):
-                    fatalError("Erro fetching: \(error)")
+        DispatchQueue.main.async {
+            AF.request(url)
+                .validate()
+                .responseData { response in
+                    switch response.result {
+                    case .success:
+                        print("Poster Validation Successful")
+                    case let .failure(error):
+                        fatalError("Erro fetching: \(error)")
+                    }
+                    completion(response.data!)
                 }
-                completion(response.data!)
-            }
+        }
     }
 }
