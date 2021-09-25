@@ -1,0 +1,3 @@
+struct GenresResponse: Decodable {
+    let genres: [Genre]
+}

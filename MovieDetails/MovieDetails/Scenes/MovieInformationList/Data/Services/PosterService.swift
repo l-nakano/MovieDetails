@@ -1,8 +1,8 @@
 import Alamofire
 
 final class PosterService {
-    func fetchMoviePoster(posterPath: String, width: Int, completion: @escaping (Data) -> Void) {
-        guard let url = URL(string: "https://image.tmdb.org/t/p/w\(width)\(posterPath)")
+    func fetchMoviePoster(posterPath: String, width: String, completion: @escaping (Data) -> Void) {
+        guard let url = URL(string: "https://image.tmdb.org/t/p/\(width)\(posterPath)")
         else {
             print("URL inválido")
             return

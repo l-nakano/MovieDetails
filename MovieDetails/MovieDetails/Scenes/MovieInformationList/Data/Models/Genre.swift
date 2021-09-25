@@ -1,3 +1,4 @@
 struct Genre: Decodable {
-    let genres: [String:String]
+    let id: Int
+    let name: String
 }

@@ -1,7 +1,7 @@
 import Alamofire
 
 final class MovieService {
-    func fetchMovieDetails(movieID: Int, key: String, posterWidth: Int, completion: @escaping (Movie, Data) -> Void) {
+    func fetchMovieDetails(movieID: Int, key: String, completion: @escaping (Movie) -> Void) {
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)?api_key=\(key)")
         else {
             print("URL inválido")
@@ -20,11 +20,7 @@ final class MovieService {
             }
             .responseDecodable(of: Movie.self) { response in
                 guard let movieDetails = response.value else { return }
-                
-                let posterService = PosterService()
-                posterService.fetchMoviePoster(posterPath: movieDetails.poster_path, width: 500) { data in
-                    completion(movieDetails, data)
-                }
+                completion(movieDetails)
             }
     }
 }
