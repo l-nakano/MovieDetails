@@ -8,19 +8,21 @@ final class MovieService {
             return
         }
         
-        AF.request(url)
-            .validate()
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    print("Validation Successful")
-                case let .failure(error):
-                    fatalError("Erro fetching: \(error)")
+        DispatchQueue.main.async {
+            AF.request(url)
+                .validate()
+                .responseData { response in
+                    switch response.result {
+                    case .success:
+                        print("Movie Validation Successful")
+                    case let .failure(error):
+                        fatalError("Erro fetching: \(error)")
+                    }
                 }
-            }
-            .responseDecodable(of: Movie.self) { response in
-                guard let movieDetails = response.value else { return }
-                completion(movieDetails)
-            }
+                .responseDecodable(of: Movie.self) { response in
+                    guard let movieDetails = response.value else { return }
+                    completion(movieDetails)
+                }
+        }
     }
 }

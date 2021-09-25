@@ -8,19 +8,21 @@ final class RelatedMoviesService {
             return
         }
         
-        AF.request(url)
-            .validate()
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    print("Validation Successful")
-                case let .failure(error):
-                    fatalError("Erro fetching: \(error)")
+        DispatchQueue.main.async {
+            AF.request(url)
+                .validate()
+                .responseData { response in
+                    switch response.result {
+                    case .success:
+                        print("Related Movie Validation Successful")
+                    case let .failure(error):
+                        fatalError("Erro fetching: \(error)")
+                    }
                 }
-            }
-            .responseDecodable(of: RelatedMoviesResponse.self) { response in
-                guard let relatedMovies = response.value else { return }
-                completion(relatedMovies.results)
-            }
+                .responseDecodable(of: RelatedMoviesResponse.self) { response in
+                    guard let relatedMovies = response.value else { return }
+                    completion(relatedMovies.results)
+                }
+        }
     }
 }
