@@ -19,3 +19,6 @@ São apresentados 20 filmes relacionados ao filme principal, além das seguintes
 
 ### DarkMode / LightMode
 O app funciona tanto no Light Mode quanto no Dark Mode.
+
+## Outros Filmes
+É possível realizar a troca do ID do filme, podendo ser relacionado qualquer filme para apresentação.
