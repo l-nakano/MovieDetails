@@ -1,8 +1,8 @@
 import Alamofire
 
-final class MovieService {
-    func fetchMovieDetails(movieID: Int, key: String, completion: @escaping (Movie) -> Void) {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)?api_key=\(key)")
+final class GenreService {
+    func fetchMovieGenres(key: String, completion: @escaping ([Genre]) -> Void) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/genre/movie/list?api_key=\(key)")
         else {
             print("URL inválido")
             return
@@ -18,9 +18,9 @@ final class MovieService {
                     fatalError("Erro fetching: \(error)")
                 }
             }
-            .responseDecodable(of: Movie.self) { response in
-                guard let movieDetails = response.value else { return }
-                completion(movieDetails)
+            .responseDecodable(of: GenresResponse.self) { response in
+                guard let genres = response.value else { return }
+                completion(genres.genres)
             }
     }
 }

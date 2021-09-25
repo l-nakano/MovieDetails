@@ -60,65 +60,64 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GzA-iP-jH5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GzA-iP-jH5">
                                 <rect key="frame" x="0.0" y="522.5" width="414" height="339.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lrz-q4-JPi">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" id="lrz-q4-JPi" customClass="RelatedMovieCell" customModule="MovieDetails" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lrz-q4-JPi" id="gWS-nA-L0i">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="92"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SN0-as-f0e">
-                                                    <rect key="frame" x="20" y="9" width="61.5" height="74"/>
+                                                    <rect key="frame" x="20" y="8" width="74" height="74"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="SN0-as-f0e" secondAttribute="height" multiplier="1:1.2" id="Q5T-ys-hVp"/>
+                                                        <constraint firstAttribute="width" secondItem="SN0-as-f0e" secondAttribute="height" multiplier="1:1" id="Q5T-ys-hVp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b9-AD-LxP" userLabel="Filme">
-                                                    <rect key="frame" x="101.5" y="17.5" width="41.5" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="8b9-AD-LxP" userLabel="Movie Title">
+                                                    <rect key="frame" x="114" y="16.5" width="44.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7N-OF-pnv" userLabel="Movie Year">
+                                                    <rect key="frame" x="114" y="53" width="41.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7N-OF-pnv" userLabel="Ano">
-                                                    <rect key="frame" x="101.5" y="54" width="41.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-VG-IWc" userLabel="Movie Genres">
+                                                    <rect key="frame" x="163.5" y="53.5" width="41.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-VG-IWc" userLabel="Gêneros">
-                                                    <rect key="frame" x="151" y="54" width="41.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZx-BX-COA">
-                                                    <rect key="frame" x="327" y="30.5" width="67" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MZx-BX-COA" firstAttribute="centerY" secondItem="gWS-nA-L0i" secondAttribute="centerY" id="101-5D-GCD"/>
                                                 <constraint firstItem="8b9-AD-LxP" firstAttribute="bottom" secondItem="SN0-as-f0e" secondAttribute="centerY" constant="-8" id="2X1-Lk-OEa"/>
-                                                <constraint firstItem="SN0-as-f0e" firstAttribute="height" secondItem="gWS-nA-L0i" secondAttribute="height" multiplier="0.8" id="2s2-wI-NEN"/>
-                                                <constraint firstAttribute="trailing" secondItem="MZx-BX-COA" secondAttribute="trailing" constant="20" id="4vi-2e-2ds"/>
                                                 <constraint firstItem="d4v-VG-IWc" firstAttribute="leading" secondItem="i7N-OF-pnv" secondAttribute="trailing" constant="8" symbolic="YES" id="6E1-u8-G0O"/>
                                                 <constraint firstItem="i7N-OF-pnv" firstAttribute="top" secondItem="SN0-as-f0e" secondAttribute="centerY" constant="8" id="Aq8-w4-ftC"/>
-                                                <constraint firstItem="SN0-as-f0e" firstAttribute="centerY" secondItem="gWS-nA-L0i" secondAttribute="centerY" id="DfI-xx-aYq"/>
+                                                <constraint firstAttribute="bottom" secondItem="SN0-as-f0e" secondAttribute="bottom" constant="8" id="C31-7P-yw1"/>
                                                 <constraint firstItem="8b9-AD-LxP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SN0-as-f0e" secondAttribute="top" constant="8" id="IvD-O2-MYd"/>
                                                 <constraint firstItem="i7N-OF-pnv" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SN0-as-f0e" secondAttribute="bottom" constant="-8" id="JqG-uf-wRU"/>
+                                                <constraint firstItem="SN0-as-f0e" firstAttribute="top" secondItem="gWS-nA-L0i" secondAttribute="top" constant="8" id="LE8-G6-JNo"/>
                                                 <constraint firstItem="d4v-VG-IWc" firstAttribute="centerY" secondItem="i7N-OF-pnv" secondAttribute="centerY" id="RNF-HE-9KC"/>
                                                 <constraint firstItem="SN0-as-f0e" firstAttribute="leading" secondItem="gWS-nA-L0i" secondAttribute="leading" constant="20" id="bja-u4-Ux6"/>
-                                                <constraint firstItem="d4v-VG-IWc" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="MZx-BX-COA" secondAttribute="leading" constant="20" id="h6q-bj-O8u"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8b9-AD-LxP" secondAttribute="trailing" constant="20" id="hL1-T1-l8F"/>
                                                 <constraint firstItem="i7N-OF-pnv" firstAttribute="leading" secondItem="8b9-AD-LxP" secondAttribute="leading" id="tD4-vH-Y6W"/>
                                                 <constraint firstItem="8b9-AD-LxP" firstAttribute="leading" secondItem="SN0-as-f0e" secondAttribute="trailing" constant="20" id="wZY-Dd-5dW"/>
-                                                <constraint firstItem="8b9-AD-LxP" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="MZx-BX-COA" secondAttribute="leading" constant="20" id="z12-51-Hwm"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d4v-VG-IWc" secondAttribute="trailing" constant="20" id="zzW-uy-d7J"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieGenres" destination="d4v-VG-IWc" id="deO-Lg-vMM"/>
+                                            <outlet property="movieImage" destination="SN0-as-f0e" id="UKz-yM-L6U"/>
+                                            <outlet property="movieTitle" destination="8b9-AD-LxP" id="Lfn-0n-A9V"/>
+                                            <outlet property="movieYear" destination="i7N-OF-pnv" id="8DF-IA-0vS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -150,6 +149,7 @@
                         <outlet property="movieImage" destination="W29-Fe-nns" id="6aC-od-2Lg"/>
                         <outlet property="movieTitleLabel" destination="DDt-9G-a28" id="jFq-lT-JrI"/>
                         <outlet property="popularityLabel" destination="vR0-fg-bvf" id="EgY-VD-Ja8"/>
+                        <outlet property="relatedMoviesTableView" destination="GzA-iP-jH5" id="Fyg-hk-dE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
